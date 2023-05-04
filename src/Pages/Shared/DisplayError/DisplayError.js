@@ -11,7 +11,7 @@ const DisplayError = () => {
         navigate('/')
     }
     return (
-        <div>
+        <div className='max-w-[1440px] mx-auto'>
             <p className='text-red-500'>Oops! Something went wrong!!</p>
             <p className='text-red-400'>
                 <i>{error.statusText || error.message}</i>

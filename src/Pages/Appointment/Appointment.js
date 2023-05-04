@@ -33,35 +33,38 @@ const Appointment = () => {
         <section className='my-20'>
             <div style={myStyle} className="hero">
                 <div className="hero-content flex-col lg:flex-row-reverse">
-                    <img src={chamber} className="w-1/2 rounded-lg" alt='' />
-                    <div className='mr-6'>
+                    <div className='mr-6 mx-4 lg:mx-0'>
                         <DayPicker
                             mode="single"
                             selected={selectedDate}
                             onSelect={setSelected}
                         />
                     </div>
+                    <img src={chamber} className="w-full lg:w-1/2 rounded-lg" alt='' />
                 </div>
             </div>
-            <div className='text-center my-14'>
-                <AppointmentCard
-                    selectedDate={selectedDate}
-                    modalData={setData}
-                    isLoading={isLoading}
-                    appointmentTime={appointmentTime}
-                ></AppointmentCard>
+            <div className='text-center my-4 lg:my-14'>
+                <div className="p-4 lg:p-0">
+                    <AppointmentCard
+                        selectedDate={selectedDate}
+                        modalData={setData}
+                        isLoading={isLoading}
+                        appointmentTime={appointmentTime}
+                    />
+                </div>
             </div>
-            <div>
+            <div className='my-4 lg:my-14'>
                 {
                     data &&
                     <ApointmentModal
                         modalData={data}
                         selectedDate={selectedDate}
                         refetch={refetch}
-                    ></ApointmentModal>
+                    />
                 }
             </div>
         </section>
+
     );
 };
 

@@ -10,9 +10,9 @@ import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 import Signup from "../Pages/SignUp/Signup";
 import Adminprivate from '../Pages/PrivateRoute/Adminprivate'
 import AddDoctor from "../Pages/DashBoard/AddDoctor/AddDoctor";
-import ManageDoctor from "../Pages/DashBoard/ManageDocotrs/ManageDoctor";
 import Payment from "../Pages/DashBoard/Payment/Payment";
 import DisplayError from "../Pages/Shared/DisplayError/DisplayError";
+import ManageDoctor from "../Pages/DashBoard/ManageDocotrs/ManageDoctor";
 
 export const router = createBrowserRouter([
     {
@@ -59,7 +59,7 @@ export const router = createBrowserRouter([
                 element: <Adminprivate><AddDoctor></AddDoctor></Adminprivate>
             },
             {
-                path: ' /dashboard/manageDoctors',
+                path: '/dashboard/manageDoctor',
                 element: <Adminprivate><ManageDoctor></ManageDoctor></Adminprivate>
             },
             {

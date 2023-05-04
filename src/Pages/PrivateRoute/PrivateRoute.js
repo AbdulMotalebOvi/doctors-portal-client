@@ -8,7 +8,12 @@ const PrivateRoute = ({ children }) => {
     const { loading, user } = useContext(AuthContext)
     const location = useLocation()
     if (loading) {
-        return <div style={{ margin: '0 , auto' }}><InfinitySpin> </InfinitySpin></div>
+        return <div className="flex justify-center items-center h-screen">
+            <div className="w-10 h-10">
+                <InfinitySpin />
+            </div>
+        </div>
+
     }
     if (user?.email) {
         return children

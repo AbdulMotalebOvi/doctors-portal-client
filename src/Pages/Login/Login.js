@@ -31,7 +31,7 @@ const Login = () => {
 
     return (
         <div className='my-20'>
-            <div className='card w-96 bg-base-100 shadow-xl m-auto p-7'>
+            <div className='card bg-base-100 shadow-xl m-auto p-7 md:w-96'>
                 <form onSubmit={handleSubmit(submit)} >
                     <h2 className='text-xl font-bold text-center'>Login</h2>
                     <div className="form-control w-full ">
@@ -52,7 +52,6 @@ const Login = () => {
                             }
                         )} />
 
-
                         {errors.password?.type === 'required' && <p className='text-red-600 font-semibold'>Password is required</p>}
                         <label className="label">
                             <span className="label-text text-[13px]">Forget Password?</span>
@@ -69,7 +68,8 @@ const Login = () => {
                 </div>
 
             </div>
-        </div >
+        </div>
+
     );
 };
 

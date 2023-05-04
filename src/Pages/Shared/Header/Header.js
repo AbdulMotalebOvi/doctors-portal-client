@@ -1,16 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/UseContexr';
 
 const Header = () => {
     const { user, logout } = useContext(AuthContext)
+    const [isOpen, setIsOpen] = useState(false);
     const handlerToLogOut = () => {
         logout()
     }
     const navLinks =
         <>
             <li><Link to='/'>Home</Link></li>
-            <li><Link to='/'>About</Link></li>
+
             <li><Link to='/appointment'>Appointment</Link></li>
             {
                 user?.email ?
@@ -36,9 +37,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <Link to='/' className="btn btn-ghost normal-case text-xl">Doctors Portal</Link>
-                <label htmlFor="dashboardLayout" tabIndex={2} className="btn btn-ghost lg:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                </label>
+
             </div>
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
@@ -48,6 +47,8 @@ const Header = () => {
 
         </div>
     );
+
+
 };
 
 export default Header;

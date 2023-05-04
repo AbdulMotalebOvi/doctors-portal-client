@@ -53,14 +53,14 @@ const Signup = () => {
 
     return (
         <div className='my-20'>
-            <div className='card w-96 bg-base-100 shadow-xl m-auto p-7'>
+            <div className='card bg-base-100 shadow-xl mx-auto p-7 sm:w-96'>
                 <form onSubmit={handleSubmit(signUp)}>
                     <h2 className='text-xl font-bold text-center'>SignUp</h2>
                     <div className="form-control w-full ">
                         <label className="label">
                             <span className="label-text">Name</span>
                         </label>
-                        <input type='text' className="input input-bordered w-full "  {...register("name", { required: "Name is required" })} />
+                        <input type='text' className="input input-bordered w-full" {...register("name", { required: "Name is required" })} />
 
                         {errors.name && <p className='text-red-500 font-semibold'>{errors.name?.message}</p>}
 
@@ -68,40 +68,38 @@ const Signup = () => {
                             <span className="label-text">Email</span>
                         </label>
 
-                        <input type='email' className="input input-bordered w-full "  {...register("email", { required: 'Email is required' })} />
+                        <input type='email' className="input input-bordered w-full" {...register("email", { required: 'Email is required' })} />
 
                         {errors.email && <p className='text-red-500 font-semibold'>{errors.email?.message}</p>}
 
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input type='password'  {...register("password", {
+                        <input type='password' {...register("password", {
                             required: true,
                             minLength: {
                                 value: 6, message: ' Password Should be at least 6 characters or longer'
                             }
-                        })} className="input input-bordered w-full " />
-
+                        })} className="input input-bordered w-full" />
 
                         {errors.password && <p className='text-red-500 font-semibold'>{errors.password?.message}</p>}
 
-
                         <label className="label">
-                            <span className="label-text text-[13px]">Forget Password?</span>
+                            <span className="label-text text-sm">Forget Password?</span>
                         </label>
-
                     </div>
-                    <input type="submit" className='mt-4 btn w-full ' />
-                    <p className='text-[13px] mt-3'>Already have an account? <Link className='text-secondary' to='/login'>Sign In</Link></p>
+                    <input type="submit" className='mt-4 btn w-full' />
+                    <p className='text-sm mt-3'>Already have an account? <Link className='text-secondary' to='/login'>Sign In</Link></p>
 
                 </form>
                 <div className="flex flex-col w-full border-opacity-50">
                     <div className="divider">OR</div>
-                    <div> <button className="btn btn-outline w-full ">CONTINUE WITH GOOGLE</button></div>
+                    <div> <button className="btn btn-outline w-full">CONTINUE WITH GOOGLE</button></div>
                 </div>
 
             </div>
-        </div >
+        </div>
+
     );
 };
 

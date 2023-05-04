@@ -28,25 +28,21 @@ const Reviews = () => {
 
     ]
     return (
-        <div className='my-[20]'>
-            <div className='flex justify-between'>
+        <div className='my-20'>
+            <div className='flex flex-col lg:flex-row justify-between items-center'>
                 <div>
-                    <p className='text-primary font-bold '>Testimonial</p>
-                    <h1 className=' text-4xl'>What Our Patients Says</h1>
+                    <p className='text-primary font-bold'>Testimonial</p>
+                    <h1 className='text-4xl'>What Our Patients Say</h1>
                 </div>
 
-                <img src={logo} alt="" className='w-[190px]' />
-
+                <img src={logo} alt="" className='w-48 lg:w-64' />
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-3'>
-                {
-                    reviewsData.map(re => <SingleReviews
-                        key={re.id}
-                        reviews={re}
-                    ></SingleReviews>)
-                }
+
+            <div className='grid grid-cols-1 gap-8 lg:grid-cols-3 mt-10'>
+                {reviewsData.map(re => <SingleReviews key={re.id} reviews={re} />)}
             </div>
         </div>
+
     );
 };
 

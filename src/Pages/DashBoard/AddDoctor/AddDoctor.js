@@ -67,36 +67,28 @@ const AddDoctor = () => {
     return (
         <div>
             <h1 className='text-2xl'>Add a new doctor</h1>
-            <div className='w-1/2 p-7'>
+            <div className='sm:w-full md:w-3/4  p-7'>
                 <form onSubmit={handleSubmit(addUser)}>
-
-                    <div className="form-control w-full ">
+                    <div className="form-control w-full">
                         <label className="label">
                             <span className="label-text">Name</span>
                         </label>
-                        <input type='text' className="input input-bordered w-full "  {...register("name", { required: "Name is required" })} />
-
+                        <input type='text' className="input input-bordered w-full" {...register("name", { required: "Name is required" })} />
                         {errors.name && <p className='text-red-500 font-semibold'>{errors.name?.message}</p>}
 
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
 
-                        <input type='email' className="input input-bordered w-full "  {...register("email", { required: 'Email is required' })} />
-
+                        <input type='email' className="input input-bordered w-full" {...register("email", { required: 'Email is required' })} />
                         {errors.email && <p className='text-red-500 font-semibold'>{errors.email?.message}</p>}
+
                         <div className=''>
                             <label className="label">
                                 <span className="label-text">Specialty</span>
                             </label>
-                            <select className="select select-bordered w-full "
-                                {...register('specialties')}
-                            >
-
-                                {
-                                    specialty?.map(sp => <option key={sp._id} value={sp.name}>{sp.name} </option>)
-                                }
-
+                            <select className="select select-bordered w-full" {...register('specialties')}>
+                                {specialty?.map(sp => <option key={sp._id} value={sp.name}>{sp.name}</option>)}
                             </select>
                         </div>
 
@@ -104,22 +96,17 @@ const AddDoctor = () => {
                             <label className="label">
                                 <span className="label-text">Choose Your photo</span>
                             </label>
-                            <div className="form-control w-full max-w-xs  border p-8 ">
-
-                                <input type="file" className="file-input file-input-bordered w-full max-w-xs" {...register("image", { required: 'Photo is required' })} />
-
-                                {errors.image &&
-                                    <p className='text-red-500 font-semibold'>{errors.image?.message}</p>}
-
+                            <div className="form-control w-full sm:max-w-md border p-8">
+                                <input type="file" className="file-input file-input-bordered w-full" {...register("image", { required: 'Photo is required' })} />
+                                {errors.image && <p className='text-red-500 font-semibold'>{errors.image?.message}</p>}
                             </div>
                         </div>
                     </div>
-                    <input type="submit" className='mt-4 btn w-full ' value='add' />
-
-
+                    <input type="submit" className='mt-8 sm:mt-4 btn w-full' value='add' />
                 </form>
             </div>
         </div>
+
     );
 };
 
